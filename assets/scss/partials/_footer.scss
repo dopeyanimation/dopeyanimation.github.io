@@ -15,12 +15,12 @@ footer.bottom {
 		@include span-columns(12);
 	}
 	nav {
-		@include span-columns(6);
-		@include shift(3);
+		@include span-columns(5);
+		@include shift(4);
 		ul {
 			margin: 0;
 			padding: 0;
-			@include span-columns(3);
+			@include span-columns(4);
 			&.left {
 			}
 			&.right {
