@@ -1,1 +1,1 @@
-This is the site for [Dopey](/dopeyanimation/dopey). It is very much a work in progress.
+This is the site for [Dopey](https://github.com/dopeyanimation/dopey). It is very much a work in progress.
