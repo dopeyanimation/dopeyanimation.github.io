@@ -22,25 +22,57 @@
 		<!--[if lt IE 8]>
 			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 		<![endif]-->
-
-		<header class="top">
-			<div class="squish">
-				<div class="logo">
-					<a href="#"><h1>Dopey 2D Animation</h1></a>
+		<script type="text/x-handlebars">
+			<header class="top">
+				<div class="squish">
+					<div class="logo">
+						{{#linkTo 'index'}}<h1>Dopey 2D Animation</h1>{{/linkTo}}
+					</div>
+					<nav>
+						<ul>
+							<li>{{#linkTo 'download'}}Download{{/linkTo}}</li>
+							<li>{{#linkTo 'features'}}Features&#x200A;/&#x200A;Gallery{{/linkTo}}</li>
+							<li><a href="http://dopeyanimation.tumblr.com/">Blog</a></li>
+							<li><a href="https://github.com/dopeyanimation/dopey/wiki">Wiki</a></li>
+							<li class="fork"><a href="https://github.com/dopeyanimation/dopey/fork" class="octoface">Fork</a></li>
+						</ul>
+					</nav>
 				</div>
-				<nav>
-					<ul>
-						<li><a href="/download/">Download</a></li>
-						<li><a href="/features/">Features&#x200A;/&#x200A;Gallery</a></li>
-						<li><a href="http://dopeyanimation.tumblr.com/">Blog</a></li>
-						<li><a href="https://github.com/dopeyanimation/dopey/wiki">Wiki</a></li>
-						<li class="fork"><a href="https://github.com/dopeyanimation/dopey/fork" class="octoface">Fork</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+			</header>
 
-		<div role="main">
+			<div role="main">
+				{{outlet}}
+			</div>
+
+			<footer class="bottom">
+				<div class="squish">
+					<div class="inner">
+						<div class="copyright">
+							<small>This site &copy;2013 <a href="http://davissorenson.com/">Davis Sorenson</a><br>
+								<a href="https://github.com/dopeyanimation/dopey/graphs/contributors">List of Dopey contributors</a></small>
+						</div>
+						<nav>
+							<ul>
+								<li>{{#linkTo 'index'}}Home{{/linkTo}}</li>
+								<li>{{#linkTo 'download'}}Download{{/linkTo}}</li>
+								<li>{{#linkTo 'features'}}Features{{/linkTo}}</li>
+							</ul>
+							<ul>
+								<li>{{#linkTo 'about'}}About{{/linkTo}}</li>
+								<li>{{#linkTo 'help'}}Help{{/linkTo}}</li>
+								<li><a href="http://dopeyanimation.tumblr.com/">Blog</a></li>
+							</ul>
+							<ul>
+								<li><a href="https://github.com/dopeyanimation/dopey">GitHub</a></li>
+								<li><a href="https://twitter.com/dopeyanimation">Twitter</a></li>
+								<li><a href="#">Google+</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</footer>
+		</script>
+		<script type="text/x-handlebars" data-template-name="index">
 			<section>
 				<div id="hero">
 					<div class="slider">
@@ -50,10 +82,10 @@
 								<div class="overlay">
 									<h1 class="large">Animate in both D's</h1>
 									<div id="download-button">
-										<a href="/download/">
+										{{#linkTo 'download'}}
 											<h2>Download</h2>
 											<span>&ndash; Free/Open Source</span>
-										</a>
+										{{/linkTo}}
 									</div>
 								</div>
 							</div>
@@ -84,7 +116,7 @@
 						<article>
 							<h1>Animate well</h1>
 							<p>Because Dopey is based on <a href="http://mypaint.intilinux.com/">MyPaint</a>, it inherits its powerful brush engine and fantastic user interface that doesn't get in your way.</p>
-							<div class="calltoaction"><a href="/features/">See Features</a></div>
+							<div class="calltoaction">{{#linkTo 'features'}}See Features{{/linkTo}}</div>
 						</article>
 						<aside>
 							<img src="http://placehold.it/438x230" alt="">
@@ -92,36 +124,23 @@
 					</div>
 				</div>
 			</section>
-		</div>
-
-		<footer class="bottom">
-			<div class="squish">
-				<div class="inner">
-					<div class="copyright">
-						<small>This site &copy;2013 <a href="http://davissorenson.com/">Davis Sorenson</a><br>
-							<a href="https://github.com/dopeyanimation/dopey/graphs/contributors">List of Dopey contributors</a></small>
-					</div>
-					<nav>
-						<ul>
-							<li><a href="/">Home</a></li>
-							<li><a href="/download/">Download</a></li>
-							<li><a href="/features/">Features</a></li>
-						</ul>
-						<ul>
-							<li><a href="/about/">About</a></li>
-							<li><a href="/help/">Help</a></li>
-							<li><a href="http://dopeyanimation.tumblr.com/">Blog</a></li>
-						</ul>
-						<ul>
-							<li><a href="https://github.com/dopeyanimation/dopey">GitHub</a></li>
-							<li><a href="https://twitter.com/dopeyanimation">Twitter</a></li>
-							<li><a href="#">Google+</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</footer>
-
+		</script>
+		<script type="text/x-handlebars" data-template-name="download">
+			<h1>Download</h1>
+			{{#linkTo 'index'}}Home{{/linkTo}}
+		</script>
+		<script type="text/x-handlebars" data-template-name="features">
+			<h1>Features</h1>
+			{{#linkTo 'index'}}Home{{/linkTo}}
+		</script>
+		<script type="text/x-handlebars" data-template-name="about">
+			<h1>About</h1>
+			{{#linkTo 'index'}}Home{{/linkTo}}
+		</script>
+		<script type="text/x-handlebars" data-template-name="help">
+			<h1>Help</h1>
+			{{#linkTo 'index'}}Home{{/linkTo}}
+		</script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
