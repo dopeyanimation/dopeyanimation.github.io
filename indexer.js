@@ -2,16 +2,17 @@
 // believe me when I say that this is the LEAST ugly solution I could find.
 // async craziness + weird API = what you see here
 
-var basePath = 'http://localhost/dps/_index.html';
+var basePath = 'http://dp.dev';
 var subPaths = ['', '/download', '/features', '/about', '/help'];
+var urlPaths = ['/_index.html', '/download', '/features', '/about', '/help'];
 var urls = [];
 var resultingPages = [];
 var page;
 var fs = require('fs');
 var i;
 
-for (i in subPaths.reverse()) {
-  urls.push(basePath + subPaths[i]);
+for (i in urlPaths.reverse()) {
+  urls.push(basePath + urlPaths[i]);
 }
 
 function handleScrape(status) {
@@ -43,16 +44,6 @@ function serializePages() {
       page.evaluate(function() {
         __PHANTOMJS__ = {};
       });
-    };
-    page.onError = function(msg, trace) {
-      var msgStack = ['ERROR: ' + msg];
-      if (trace && trace.length) {
-        msgStack.push('TRACE:');
-        trace.forEach(function(t) {
-          msgStack.push(' -> ' + t.file + ': ' + t.line + (t.function ? ' (in function "' + t.function + '")' : ''));
-        });
-      }
-      console.error(msgStack.join('\n'));
     };
 
     page.open(url, handleScrape);

@@ -2,8 +2,7 @@ DP = Em.Application.create();
 
 if (typeof __PHANTOMJS__ !== 'undefined') {
 	DP.Router.reopen({
-		location: 'history',
-		rootURL: '/dps/'
+		location: 'history'
 	});
 }
 
