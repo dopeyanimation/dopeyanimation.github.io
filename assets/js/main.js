@@ -1,11 +1,18 @@
 DP = Em.Application.create();
 
-DP.ApplicationController = Ember.Controller.extend({
+if (__PHANTOMJS__) {
+	DP.Router.reopen({
+		location: 'history',
+		rootURL: '/dps/'
+	});
+}
+
+DP.ApplicationController = Em.Controller.extend({
 	currentPathChanged: function() {
 		var page;
 
-		Ember.run.next(function() {
-			if (!Ember.isNone(ga)) {
+		Em.run.next(function() {
+			if (!Em.isNone(ga)) {
 				page = window.location.hash.length > 0 ?
 					   window.location.hash.substring(1) :
 					   window.location.pathname;
