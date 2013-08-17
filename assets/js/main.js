@@ -1,6 +1,6 @@
 DP = Em.Application.create();
 
-if (__PHANTOMJS__) {
+if (typeof __PHANTOMJS__ !== 'undefined') {
 	DP.Router.reopen({
 		location: 'history',
 		rootURL: '/dps/'

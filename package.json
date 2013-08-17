@@ -1,0 +1,13 @@
+{
+  "name": "dopeyanimation",
+  "description": "The website of Dopey 2D Animation",
+  "author": "Davis Sorenson",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-ember-templates": "~0.4.10",
+    "grunt-contrib-watch": "~0.5.2",
+    "grunt-contrib-sass": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0"
+  }
+}
