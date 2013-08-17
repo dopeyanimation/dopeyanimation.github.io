@@ -13,9 +13,19 @@ module.exports = function(grunt) {
         }
       }
     },
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'assets/templates/templates.min.js': ['assets/templates/templates.js']
+        }
+      }
+    },
     watch: {
       emberTemplates: {
-        files: 'assets/templates/*.handlebars',
+        files: '<%= emberTemplates.files %>',
         tasks: ['emberTemplates', 'livereload']
       }
     }
@@ -27,5 +37,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.registerTask('default', ['emberTemplates']);
+  grunt.registerTask('default', ['emberTemplates', 'uglify']);
 }
