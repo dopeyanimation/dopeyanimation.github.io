@@ -9,7 +9,7 @@ var resultingPages = [];
 var page;
 var fs = require('fs');
 
-for (i in subPaths) {
+for (i in subPaths.reverse()) {
 	urls.push(basePath + subPaths[i]);
 }
 
@@ -26,8 +26,8 @@ function handleScrape(status) {
 
 function serializePages() {
 	if (urls.length == 0) {
-		for (i in resultingPages.reverse()) {
-			var f = fs.open('.' + subPaths[i] + '/_index.html', 'w');
+		for (i in resultingPages) {
+			var f = fs.open('.' + subPaths[i] + '/index.html', 'w');
 			f.write(resultingPages[i]);
 			f.close();
 		}

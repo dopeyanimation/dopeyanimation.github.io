@@ -1,0 +1,48 @@
+<header class="top">
+	<div class="squish">
+		<div class="logo">
+			{{#linkTo 'index'}}<h1>Dopey 2D Animation</h1>{{/linkTo}}
+		</div>
+		<nav>
+			<ul>
+				<li>{{#linkTo 'download'}}Download{{/linkTo}}</li>
+				<li>{{#linkTo 'features'}}Features&#x200A;/&#x200A;Gallery{{/linkTo}}</li>
+				<li><a href="http://dopeyanimation.tumblr.com/">Blog</a></li>
+				<li><a href="https://github.com/dopeyanimation/dopey/wiki">Wiki</a></li>
+				<li class="fork"><a href="https://github.com/dopeyanimation/dopey/fork" class="octoface">Fork</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div role="main">
+	{{outlet}}
+</div>
+
+<footer class="bottom">
+	<div class="squish">
+		<div class="inner">
+			<div class="copyright">
+				<small>This site &copy;2013 <a href="http://davissorenson.com/">Davis Sorenson</a><br>
+					<a href="https://github.com/dopeyanimation/dopey/graphs/contributors">List of Dopey contributors</a></small>
+			</div>
+			<nav>
+				<ul>
+					<li>{{#linkTo 'index'}}Home{{/linkTo}}</li>
+					<li>{{#linkTo 'download'}}Download{{/linkTo}}</li>
+					<li>{{#linkTo 'features'}}Features{{/linkTo}}</li>
+				</ul>
+				<ul>
+					<li>{{#linkTo 'about'}}About{{/linkTo}}</li>
+					<li>{{#linkTo 'help'}}Help{{/linkTo}}</li>
+					<li><a href="http://dopeyanimation.tumblr.com/">Blog</a></li>
+				</ul>
+				<ul>
+					<li><a href="https://github.com/dopeyanimation/dopey">GitHub</a></li>
+					<li><a href="https://twitter.com/dopeyanimation">Twitter</a></li>
+					<li><a href="#">Google+</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</footer>
