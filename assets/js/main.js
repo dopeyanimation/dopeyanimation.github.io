@@ -13,10 +13,13 @@ DP.PhantomJS = Em.Object.extend({
 
 // for use when running the indexer script
 if (phantomjs) {
+	// don't use hash URLs
 	DP.Router.reopen({
 		location: 'history'
 	});
 
+	// add a class to the html element so that we know we're viewing an
+	// indexed version of the page
 	$('html').addClass('phantom');
 }
 
@@ -34,6 +37,18 @@ DP.ApplicationController = Em.Controller.extend({
 			}
 		});
 	}.observes('currentPath')
+});
+
+Em.Route.reopen({
+	redirect: function() {
+		var loc = window.location;
+		console.log(this.get('routeName'));
+		console.log(loc.pathname);
+
+		if (loc.pathname !== '/') {
+			loc.href = loc.origin + '/#' + loc.pathname;
+		}
+	}
 });
 
 DP.Router.map(function() {
