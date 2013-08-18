@@ -88,6 +88,10 @@ $calltoaction-height: 1.8em;
 	}
 }
 
-.no-js {
+.static {
 	display: none;
+}
+
+.phantom .static {
+	display: block;
 }

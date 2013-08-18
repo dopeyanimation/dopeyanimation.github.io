@@ -16,6 +16,8 @@ if (phantomjs) {
 	DP.Router.reopen({
 		location: 'history'
 	});
+
+	$('html').addClass('phantom');
 }
 
 DP.ApplicationController = Em.Controller.extend({

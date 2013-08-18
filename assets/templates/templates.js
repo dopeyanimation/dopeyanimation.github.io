@@ -27,7 +27,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("<div class=\"no-js\">");
+  data.buffer.push("<div class=\"static\">");
   }
 
 function program3(depth0,data) {

@@ -23,7 +23,7 @@ function handleScrape(status) {
   }
 
   window.setTimeout(function() {
-    page.release();
+    page.release(); // XXX phantomjs 1.7: use page.close(). ubuntu 13.04 uses 1.6.
     serializePages();
   }, 2000);
 }
