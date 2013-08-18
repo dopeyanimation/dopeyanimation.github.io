@@ -23,10 +23,21 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        files: {
+          'assets/css/main.css': 'assets/scss/main.scss'
+        }
+      }
+    },
     watch: {
       emberTemplates: {
         files: '<%= emberTemplates.files %>',
         tasks: ['emberTemplates', 'livereload']
+      },
+      css: {
+        files: '<%= sass.dist.files %>',
+        tasks: ['sass']
       }
     }
   });
@@ -37,5 +48,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.registerTask('default', ['emberTemplates', 'uglify']);
+  grunt.registerTask('default', ['emberTemplates', 'uglify', 'sass']);
 }

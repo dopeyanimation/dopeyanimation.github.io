@@ -1,19 +1,21 @@
-// note: this is not the kind of code I would usually write.
-// believe me when I say that this is the LEAST ugly solution I could find.
-// async craziness + weird API = what you see here
+var basePath = 'http://dp.dev',
+    subPaths = ['', '/download', '/features', '/about', '/help'],
+    urls = [],
+    resultingPages = [],
+    page,
+    fs = require('fs'),
+    sourceFile = '_index.html',
+    i;
 
-var basePath = 'http://dp.dev';
-var subPaths = ['', '/download', '/features', '/about', '/help'];
-var urlPaths = ['/_index.html', '/download', '/features', '/about', '/help'];
-var urls = [];
-var resultingPages = [];
-var page;
-var fs = require('fs');
-var i;
-
-for (i in urlPaths.reverse()) {
-  urls.push(basePath + urlPaths[i]);
+for (i in subPaths) {
+  urls.push(basePath + subPaths[i]);
+  console.log(basePath + subPaths[i]);
+  var path = '.' + subPaths[i] + '/index.html'
+  fs.remove(path);
+  fs.copy(sourceFile, path);
 }
+
+urls = urls.reverse();
 
 function handleScrape(status) {
   if (status === 'success') {

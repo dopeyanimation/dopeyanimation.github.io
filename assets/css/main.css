@@ -561,6 +561,9 @@ p a {
     .calltoaction:hover a {
       color: #222222; }
 
+.no-js {
+  display: none; }
+
 header.top {
   background-color: #eeeeee; }
   header.top .logo {

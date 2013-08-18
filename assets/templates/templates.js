@@ -27,61 +27,77 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("<h1>Dopey 2D Animation</h1>");
+  data.buffer.push("<div class=\"no-js\">");
   }
 
 function program3(depth0,data) {
   
   
-  data.buffer.push("Download");
+  data.buffer.push("<h1>Dopey 2D Animation</h1>");
   }
 
 function program5(depth0,data) {
   
   
-  data.buffer.push("Features&#x200A;/&#x200A;Gallery");
+  data.buffer.push("Download");
   }
 
 function program7(depth0,data) {
   
   
-  data.buffer.push("Home");
+  data.buffer.push("Features&#x200A;/&#x200A;Gallery");
   }
 
 function program9(depth0,data) {
   
   
-  data.buffer.push("Features");
+  data.buffer.push("Home");
   }
 
 function program11(depth0,data) {
   
   
-  data.buffer.push("About");
+  data.buffer.push("Features");
   }
 
 function program13(depth0,data) {
   
   
+  data.buffer.push("About");
+  }
+
+function program15(depth0,data) {
+  
+  
   data.buffer.push("Help");
   }
 
-  data.buffer.push("<header class=\"top\">\n	<div class=\"squish\">\n		<div class=\"logo\">\n			");
+function program17(depth0,data) {
+  
+  
+  data.buffer.push("</div>");
+  }
+
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack1 = helpers['if'].call(depth0, "phantomjs.isPresent", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n<header class=\"top\">\n	<div class=\"squish\">\n		<div class=\"logo\">\n			");
+  hashTypes = {};
+  hashContexts = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "linkTo", "index", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n		</div>\n		<nav>\n			<ul>\n				<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "download", options) : helperMissing.call(depth0, "linkTo", "download", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n				<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "features", options) : helperMissing.call(depth0, "linkTo", "features", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n				<li><a href=\"http://dopeyanimation.tumblr.com/\">Blog</a></li>\n				<li><a href=\"https://github.com/dopeyanimation/dopey/wiki\">Wiki</a></li>\n				<li class=\"fork\"><a href=\"https://github.com/dopeyanimation/dopey/fork\" class=\"octoface\">Fork</a></li>\n			</ul>\n		</nav>\n	</div>\n</header>\n\n<div role=\"main\">\n	");
@@ -91,34 +107,38 @@ function program13(depth0,data) {
   data.buffer.push("\n</div>\n\n<footer class=\"bottom\">\n	<div class=\"squish\">\n		<div class=\"inner\">\n			<div class=\"copyright\">\n				<small>This site &copy;2013 <a href=\"http://davissorenson.com/\">Davis Sorenson</a><br>\n					<a href=\"https://github.com/dopeyanimation/dopey/graphs/contributors\">List of Dopey contributors</a></small>\n			</div>\n			<nav>\n				<ul>\n					<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "index", options) : helperMissing.call(depth0, "linkTo", "index", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n					<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "download", options) : helperMissing.call(depth0, "linkTo", "download", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n					<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "features", options) : helperMissing.call(depth0, "linkTo", "features", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n				</ul>\n				<ul>\n					<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "about", options) : helperMissing.call(depth0, "linkTo", "about", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n					<li>");
   hashTypes = {};
   hashContexts = {};
-  options = {hash:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  options = {hash:{},inverse:self.noop,fn:self.program(15, program15, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || depth0.linkTo),stack1 ? stack1.call(depth0, "help", options) : helperMissing.call(depth0, "linkTo", "help", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("</li>\n					<li><a href=\"http://dopeyanimation.tumblr.com/\">Blog</a></li>\n				</ul>\n				<ul>\n					<li><a href=\"https://github.com/dopeyanimation/dopey\">GitHub</a></li>\n					<li><a href=\"https://twitter.com/dopeyanimation\">Twitter</a></li>\n					<li><a href=\"#\">Google+</a></li>\n				</ul>\n			</nav>\n		</div>\n	</div>\n</footer>");
+  data.buffer.push("</li>\n					<li><a href=\"http://dopeyanimation.tumblr.com/\">Blog</a></li>\n				</ul>\n				<ul>\n					<li><a href=\"https://github.com/dopeyanimation/dopey\">GitHub</a></li>\n					<li><a href=\"https://twitter.com/dopeyanimation\">Twitter</a></li>\n					<li><a href=\"#\">Google+</a></li>\n				</ul>\n			</nav>\n		</div>\n	</div>\n</footer>\n");
+  hashTypes = {};
+  hashContexts = {};
+  stack2 = helpers['if'].call(depth0, "phantomjs.isPresent", {hash:{},inverse:self.noop,fn:self.program(17, program17, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   return buffer;
   
 });

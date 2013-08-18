@@ -1,6 +1,18 @@
-DP = Em.Application.create();
+var phantomjs = (typeof __PHANTOMJS__ !== 'undefined') ? true : false;
 
-if (typeof __PHANTOMJS__ !== 'undefined') {
+var DP = Em.Application.create({
+	ready: function() {
+		this.register('phantomjs:ispresent', DP.PhantomJS, {singleton: true});
+		this.inject('controller', 'phantomjs', 'phantomjs:ispresent');
+	}
+});
+
+DP.PhantomJS = Em.Object.extend({
+	isPresent: phantomjs
+});
+
+// for use when running the indexer script
+if (phantomjs) {
 	DP.Router.reopen({
 		location: 'history'
 	});
