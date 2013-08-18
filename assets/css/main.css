@@ -561,10 +561,10 @@ p a {
     .calltoaction:hover a {
       color: #222222; }
 
-.static {
+#static {
   display: none; }
 
-.phantom .static {
+.phantom #static {
   display: block; }
 
 header.top {

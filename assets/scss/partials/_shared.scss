@@ -88,10 +88,10 @@ $calltoaction-height: 1.8em;
 	}
 }
 
-.static {
+#static {
 	display: none;
 }
 
-.phantom .static {
+.phantom #static {
 	display: block;
 }

@@ -1,10 +1,18 @@
 var phantomjs = (typeof __PHANTOMJS__ !== 'undefined') ? true : false;
 
+if (!phantomjs) {
+	$(document).ready(function () {
+		$('#static').remove();
+		$('html').removeClass('phantom');
+	});
+}
+
 var DP = Em.Application.create({
 	ready: function() {
 		this.register('phantomjs:ispresent', DP.PhantomJS, {singleton: true});
 		this.inject('controller', 'phantomjs', 'phantomjs:ispresent');
-	}
+	},
+	rootElement: (phantomjs) ? '#static' : '#dynamic'
 });
 
 DP.PhantomJS = Em.Object.extend({
@@ -21,6 +29,16 @@ if (phantomjs) {
 	// add a class to the html element so that we know we're viewing an
 	// indexed version of the page
 	$('html').addClass('phantom');
+} else {
+	// redirect urls to main url
+	Em.Route.reopen({
+		activate: function() {
+			var loc = window.location;
+			if (loc.pathname !== '/') {
+				loc.href = loc.origin + '/#' + loc.pathname;
+			}
+		}
+	});
 }
 
 DP.ApplicationController = Em.Controller.extend({
@@ -37,18 +55,6 @@ DP.ApplicationController = Em.Controller.extend({
 			}
 		});
 	}.observes('currentPath')
-});
-
-Em.Route.reopen({
-	redirect: function() {
-		var loc = window.location;
-		console.log(this.get('routeName'));
-		console.log(loc.pathname);
-
-		if (loc.pathname !== '/') {
-			loc.href = loc.origin + '/#' + loc.pathname;
-		}
-	}
 });
 
 DP.Router.map(function() {
